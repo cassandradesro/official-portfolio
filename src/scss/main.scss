@@ -28,9 +28,10 @@ $breakpoint-smallcomp: 1080px;
 $Lato: "Lato", sans-serif;
 $Muli: "Muli", sans-serif;
 $Playfair: "Playfair Display", serif;
-$PrettyPen: "Pretty Pen", sans-serif;
+// $PrettyPen: "PrettyPen", sans-serif;
 $grey: #555555;
 $blue: #74cad3;
+$text-color: #040404;
 /* 1. Main Layout ================================= */
 
 * {
@@ -41,13 +42,14 @@ body {
 	background: #ccc;
 	width: 100%;
 	margin: 0 auto;
+
 	
 }
 
 /* 2. Content ================================= */
 
 .logo{
-	position: fixed;
+	position: absolute;
 	top: 10px;
 	left: 10px;
 	z-index: 999999;
@@ -60,7 +62,7 @@ body {
 
 }
 .hamburger{
-	position: absolute;
+	position: fixed;
 	z-index: 9999999;
 	right: 10px;
 	top: 10px;
@@ -108,7 +110,7 @@ nav{
 	ul {
 		margin-top: 140px;
 		li{
-			margin-bottom: 10px;
+			margin-bottom: 20px;
 			a{
 				text-decoration: none;
 				color: $grey;
@@ -126,12 +128,14 @@ nav{
 	}
 }
 .home{
+	display: none;
 	width: 100%;
 	height: 100vh;
 	background-image: url(../img/home-bg.jpg); 
 	background-repeat:no-repeat; 
 	background-size: cover;
 	background-position: center;
+	color: $text-color;
 	box-shadow: inset 10px 10px 300px 200px rgba(255,255,255,0.81);
 	// position: relative;
 
@@ -148,7 +152,7 @@ nav{
 
 		
 		.subtitle{
-			font-family: $PrettyPen;
+			font-family: "Pretty Pen";
 
 		}
 		.title{
@@ -178,6 +182,7 @@ nav{
 		}
 		.scroll{
 			font-family: "Lato", sans-serif;
+			font-weight: bold;
 			text-transform: uppercase;
 			font-size: .8em;
 			bottom: 10px;
@@ -197,7 +202,7 @@ nav{
 				letter-spacing: 0.2em;
 				font-size: 1rem;
 				bottom: -15%;
-				right: 5%;
+				right: 0;
 				
 			}
 		}
@@ -234,6 +239,309 @@ nav{
 	}
 
 }
+
+.wrapper{
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+   	padding: 10% 5% 7% 15%;
+   	font-size: .9rem;
+   	font-family: $Muli;
+	@media (max-width: $breakpoint-tablet) {
+		flex-direction: column;
+		align-items: center;
+		padding: 10% 5% 7% 5%;
+
+	}
+}
+
+.about{
+	display: none;
+	background-color: #fff;
+	width: 100%;
+	height: 135vh;
+
+	@media (max-width: $breakpoint-tablet) {
+		height: auto;
+	}	
+   	.about-main-text{
+   		padding: 0 4%;
+   		h1{
+   			font-family: "Pretty Pen";
+   			margin-bottom: 30px;
+   			font-size: 60px;
+   		}
+		p{
+			margin-bottom: 60px;
+			line-height: 22px;
+		}
+		@media (max-width: $breakpoint-tablet) {
+			width: 100%;
+		
+		}
+		.images{
+			display: flex;
+			flex-direction: row;
+			width:100%;
+			height: 30vh;
+			transition: .5s;
+			@media (max-width: $breakpoint-tablet) {
+				flex-direction: column;
+				height: 100vh;
+
+			}
+			.image{
+				background-color: green;
+				
+				
+			}
+			.image1{
+				width: 35%;
+				margin-right: 5%;
+				@media (max-width: $breakpoint-tablet) {
+					width: 100%;
+					height: 60%;
+					margin: 0 0 40px 0;
+
+			
+				}
+			}
+			.image2{
+				width: 60%;
+				@media (max-width: $breakpoint-tablet) {
+					width: 100%;
+					height: 35%;
+
+			
+				}
+			}
+		}
+		.quote{
+			font-family: "Lato", sans-serif;
+			margin-top: 60px;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: .3em;
+			font-size: .8em;
+		}
+   	}
+
+   	.about-aside{
+   		display: flex;
+   		flex-direction: column;
+   		width: 40%;
+   		padding: 0 4%;
+   		border-left: 1px solid #000;
+		@media (max-width: $breakpoint-tablet) {
+			width: 100%;
+			border-top: 1px solid #000;
+			border-left: none;
+			padding: 3%;
+
+			.content p{ 
+
+				line-height: 22px;
+			}
+		}
+   		.content h2{
+   			font-family: "Lato", sans-serif;
+   			text-transform: uppercase;
+   			font-size: .7em;
+   			padding-bottom: 20px;
+
+		}
+   		.love{
+   			margin-bottom: 100px;
+			@media (max-width: $breakpoint-tablet) {
+   			   	margin: 20px 0 60px 0;
+   			}
+   		}
+   	}
+}
+
+.quote-break{
+	display: none;
+	background-image: url(../img/quote-break-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+
+	height: 100vh;
+	width: 100%;
+	color: $text-color;
+	.text-block{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: $blue;
+		width: 55vh;
+		height: 45vh;
+		text-align: center;
+		padding: 100px;
+
+		@media (max-width: $breakpoint-mobile) {
+			width: 35vh;
+			height: 25vh;
+			padding: 20px;
+
+
+		}
+
+		h1{
+			font-family: "Pretty Pen";
+			font-size: 60px;
+			@media (max-width: $breakpoint-mobile) {
+				font-size: 20px;
+			}
+		}
+		p{
+			font-family: $Lato;
+			font-size: .9em;
+			font-weight: bold;
+			text-transform: uppercase;
+			line-height: 26px;
+			margin: 18% 0 10% 0;
+
+			@media (max-width: $breakpoint-mobile) {
+				font-size: .5em;
+				line-height: 20px;
+			}
+
+		}
+		a{
+			text-transform: uppercase;
+			font-family: "Oswald", sans-serif;
+			text-decoration: none;
+			color: $text-color;
+			font-size: .7em;
+		}
+	}
+}
+
+
+
+.booking{
+	display: none;
+	background-color: #fff;
+	width: 100%;
+	height: 80vh;
+
+	.image{
+		min-width: 35%;
+		height: 55vh;
+		background-color: yellow;
+		margin-right: 100px;
+		@media (max-width: $breakpoint-tablet) {
+		}
+		@media (max-width: $breakpoint-mobile) {
+			width: 100%;
+		}
+	}
+	.booking-main-text{
+		width: 50%;
+		h1{
+			font-family: "Pretty Pen", cursive;
+			font-size: 60px;
+			margin-bottom: 40px;
+		}
+		p{
+			margin-bottom: 30px;
+			font-family: $Muli;
+			line-height: 22px;
+			font-size: .9em;
+		}
+		@media (max-width: $breakpoint-tablet) {
+			width: 100%;
+		}
+
+	}
+}
+
+
+
+// .contact{
+// 	background-color: #fff;
+// 	width: 100%;
+// 	height: 60vh;
+
+// 	@media (max-width: $breakpoint-tablet) {
+// 		height: auto;
+// 	}	
+//    	.contact-main-text{
+//    		padding: 0 4%;
+//    		h1{
+//    			font-family: "Pretty Pen";
+//    			margin-bottom: 30px;
+//    			font-size: 60px;
+//    		}
+		
+// 		@media (max-width: $breakpoint-tablet) {
+// 			width: 100%;
+		
+// 		}
+//    	}
+
+//    	.contact-aside{
+//    		display: flex;
+//    		flex-direction: column;
+//    		width: 40%;
+//    		padding: 0 4%;
+//    		border-left: 1px solid #000;
+// 		@media (max-width: $breakpoint-tablet) {
+// 			width: 100%;
+// 			border-top: 1px solid #000;
+// 			border-left: none;
+// 			padding: 3%;
+
+// 			.content p{ 
+
+// 				line-height: 22px;
+// 			}
+// 		}
+//    		.content h2{
+//    			font-family: "Lato", sans-serif;
+//    			text-transform: uppercase;
+//    			font-size: .7em;
+//    			padding-bottom: 20px;
+
+// 		}
+//    		.love{
+//    			margin-bottom: 100px;
+// 			@media (max-width: $breakpoint-tablet) {
+//    			   	margin: 20px 0 60px 0;
+//    			}
+//    		}
+//    	}
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
