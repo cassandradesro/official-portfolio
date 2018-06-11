@@ -71,7 +71,7 @@ body {
 		height: 3px;
 		width: 30px;
 		margin-bottom: 3px;
-		background-color: #000;
+		background-color: $text-color;
 	}
 }
 
@@ -128,7 +128,7 @@ nav{
 	}
 }
 .home{
-	display: none;
+	
 	width: 100%;
 	height: 100vh;
 	background-image: url(../img/home-bg.jpg); 
@@ -235,16 +235,15 @@ nav{
 
 @media (min-width: $breakpoint-tablet) {
 	.no-desktop{
-		display: none;
+		
 	}
 
 }
 
 .wrapper{
-	height: 100%;
 	display: flex;
-	flex-direction: row;
-   	padding: 10% 5% 7% 15%;
+    flex-direction: row;
+    padding: 10% 5% 7% 15%;
    	font-size: .9rem;
    	font-family: $Muli;
 	@media (max-width: $breakpoint-tablet) {
@@ -256,7 +255,7 @@ nav{
 }
 
 .about{
-	display: none;
+	
 	background-color: #fff;
 	width: 100%;
 	height: 135vh;
@@ -265,6 +264,7 @@ nav{
 		height: auto;
 	}	
    	.about-main-text{
+
    		padding: 0 4%;
    		h1{
    			font-family: "Pretty Pen";
@@ -331,10 +331,10 @@ nav{
    		flex-direction: column;
    		width: 40%;
    		padding: 0 4%;
-   		border-left: 1px solid #000;
+   		border-left: 1px solid $text-color;
 		@media (max-width: $breakpoint-tablet) {
 			width: 100%;
-			border-top: 1px solid #000;
+			border-top: 1px solid $text-color;
 			border-left: none;
 			padding: 3%;
 
@@ -360,11 +360,12 @@ nav{
 }
 
 .quote-break{
-	display: none;
+	
 	background-image: url(../img/quote-break-bg.jpg);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
+	position: relative;
 
 	height: 100vh;
 	width: 100%;
@@ -422,7 +423,7 @@ nav{
 
 
 .booking{
-	display: none;
+	
 	background-color: #fff;
 	width: 100%;
 	height: 80vh;
@@ -460,60 +461,63 @@ nav{
 
 
 
-// .contact{
-// 	background-color: #fff;
-// 	width: 100%;
-// 	height: 60vh;
+.contact{
+	background-color: #fff;
+	width: 100%;
+	height: 80vh;
 
-// 	@media (max-width: $breakpoint-tablet) {
-// 		height: auto;
-// 	}	
-//    	.contact-main-text{
-//    		padding: 0 4%;
-//    		h1{
-//    			font-family: "Pretty Pen";
-//    			margin-bottom: 30px;
-//    			font-size: 60px;
-//    		}
+	@media (max-width: $breakpoint-tablet) {
+		height: auto;
+	}	
+   	.form-area{
+   		display: flex;
+   		flex-direction: column;
+   		align-items: flex-end;
 		
-// 		@media (max-width: $breakpoint-tablet) {
-// 			width: 100%;
+   		padding: 0% 4% 0 15%;
+   		// width: 70%;
+   		h1{
+   			font-family: "Pretty Pen", cursive;
+   			margin-bottom: 30px;
+   			font-size: 60px;
+   		}
 		
-// 		}
-//    	}
+		@media (max-width: $breakpoint-tablet) {
+			width: 100%;
+		
+		}
 
-//    	.contact-aside{
-//    		display: flex;
-//    		flex-direction: column;
-//    		width: 40%;
-//    		padding: 0 4%;
-//    		border-left: 1px solid #000;
-// 		@media (max-width: $breakpoint-tablet) {
-// 			width: 100%;
-// 			border-top: 1px solid #000;
-// 			border-left: none;
-// 			padding: 3%;
+		input{
+			border: none;
+			border-top: 1px solid $grey;
+			width: 100%;
+			font-size: 1em;
+			font-family: $Lato;
+			margin-bottom: 40px;
+			width: 450px;
 
-// 			.content p{ 
+		}
+   	}
 
-// 				line-height: 22px;
-// 			}
-// 		}
-//    		.content h2{
-//    			font-family: "Lato", sans-serif;
-//    			text-transform: uppercase;
-//    			font-size: .7em;
-//    			padding-bottom: 20px;
+   	.contact-aside{
+   		display: flex;
+   		flex-direction: column;
+   		width: 20%;
+   		padding: 0 4%;
+   		border-left: 1px solid $text-color;
+		@media (max-width: $breakpoint-tablet) {
+			width: 100%;
+			border-top: 1px solid $text-color;
+			border-left: none;
+			padding: 3%;
 
-// 		}
-//    		.love{
-//    			margin-bottom: 100px;
-// 			@media (max-width: $breakpoint-tablet) {
-//    			   	margin: 20px 0 60px 0;
-//    			}
-//    		}
-//    	}
-// }
+			p{ 
+
+				line-height: 22px;
+			}
+		}
+	}
+}
 
 
 
